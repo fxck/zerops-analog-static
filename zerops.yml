@@ -1,0 +1,12 @@
+zerops:
+  - setup: analogstatic
+    build:
+      base: nodejs@18
+      buildCommands:
+        - npm i
+        - npm run build
+      deploy:
+        - 'dist/client/~'
+      cache:
+        - node_modules
+        - package-lock.json

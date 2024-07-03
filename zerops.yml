@@ -1,12 +1,11 @@
 zerops:
-  - setup: analogstatic
+  - setup: app
     build:
-      base: nodejs@18
+      base: nodejs@20
       buildCommands:
-        - npm i
-        - npm run build
-      deploy:
-        - 'dist/client/~'
-      cache:
-        - node_modules
-        - package-lock.json
+        - pnpm i
+        - pnpm build.server
+      deployFiles:
+        - dist/~
+    run:
+      base: static

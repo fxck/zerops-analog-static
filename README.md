@@ -1,44 +1,26 @@
-# Zerops + Analog - Static
+# Analog App
 
-<!-- ![Header Image](/header.png) -->
+This project was generated with [Analog](https://analogjs.org), the fullstack meta-framework for Angular.
 
-A Static Analog example for Zerops which you can deploy in 2 simple steps.
+## Setup
 
-**Features**
+Run `npm install` to install the application dependencies.
 
-- Analog
-- Tailwind
+## Development
 
-## Instructions to Deploy on Zerops
+Run `npm start` for a dev server. Navigate to `http://localhost:5173/`. The application automatically reloads if you change any of the source files.
 
-1. Navigate to the Zerops Dashboard and locate the import project button on the sidebar.
+## Build
 
-2. Paste the Project Yaml
+Run `npm run build` to build the client/server project. The client build artifacts are located in the `dist/analog/public` directory. The server for the API build artifacts are located in the `dist/analog/server` directory.
 
-```yaml
-project:
-  name: analog
-services:
-  - hostname: analogstatic
-    type: nginx@1.22
-    nginxConfig: |-
-      server {
-          listen 80 default_server;
-          listen [::]:80 default_server;
+## Test
 
-          server_name _;
-          root /var/www;
+Run `npm run test` to run unit tests with [Vitest](https://vitest.dev).
 
-          location / {
-              try_files $uri $uri/ /index.html;
-          }
+## Community
 
-          access_log syslog:server=unix:/dev/log,facility=local1 default_short;
-          error_log syslog:server=unix:/dev/log,facility=local1;
-      }
-    buildFromGit: https://github.com/fxck/zerops-analog-static
-    enableSubdomainAccess: true
-    minContainers: 1
-```
-
-If you still find yourself stuck in the process join our [Discord community](https://discord.gg/5ptAqtpyvh).
+- Visit and Star the [GitHub Repo](https://github.com/analogjs/analog)
+- Join the [Discord](https://chat.analogjs.org)
+- Follow us on [Twitter](https://twitter.com/analogjs)
+- Become a [Sponsor](https://github.com/sponsors/brandonroberts)

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
     <h3>The fullstack meta-framework for Angular!</h3>
 
     <div class="card">
-      <button type="button" (click)="increment()">Count {{ count }}</button>
+      <button type="button" (click)="increment()">Count {{ count() }}</button>
     </div>
 
     <p class="read-the-docs">
@@ -38,9 +38,9 @@ import { Component } from '@angular/core';
   ],
 })
 export default class HomeComponent {
-  count = 0;
+  count = signal(0);
 
   increment() {
-    this.count++;
+    this.count.update((count) => count + 1);
   }
 }

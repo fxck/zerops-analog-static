@@ -1,26 +1,50 @@
-# Analog App
+# Zerops x Analog - Static
 
-This project was generated with [Analog](https://analogjs.org), the fullstack meta-framework for Angular.
+Analog is a fullstack meta-framework for building applications and websites with Angular. [Zerops](https://zerops.io) makes deploying and running Analog apps, both server side rendered and static, a breeze. This recipe showcases the Static version, see [zeropsio/recipe-analog-nodejs](https://github.com/zeropsio/recipe-analog-nodejs) for the Node.js version.
 
-## Setup
+![analog](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/svg/cover-analog.svg)
 
-Run `npm install` to install the application dependencies.
+<br/>
 
-## Development
+## Deploy on Zerops
 
-Run `npm start` for a dev server. Navigate to `http://localhost:5173/`. The application automatically reloads if you change any of the source files.
+You can either click the deploy button to deploy directly on Zerops, or manually copy the [import yaml](https://github.com/zeropsio/recipe-analog-static/blob/main/zerops-project-import.yml) to the import dialog in the Zerops app.
 
-## Build
+<br/>
 
-Run `npm run build` to build the client/server project. The client build artifacts are located in the `dist/analog/public` directory. The server for the API build artifacts are located in the `dist/analog/server` directory.
+[![Deploy on Zerops](https://github.com/zeropsio/recipe-shared-assets/blob/main/deploy-button/green/deploy-button.svg)](https://app.zerops.io/recipe/analog-static)
 
-## Test
+<br/>
 
-Run `npm run test` to run unit tests with [Vitest](https://vitest.dev).
+## Recipe features
 
-## Community
+- Latest version of **Analog** with SSG running on a **Zerops Static** service.
 
-- Visit and Star the [GitHub Repo](https://github.com/analogjs/analog)
-- Join the [Discord](https://chat.analogjs.org)
-- Follow us on [Twitter](https://twitter.com/analogjs)
-- Become a [Sponsor](https://github.com/sponsors/brandonroberts)
+<br/>
+
+## Production vs. development
+
+This recipe is ready for production as is, and will scale horizontally by adding more containers in case of high traffic surges. If you want to achieve the highest baseline reliability and resiliace, start with at least two containers (add `minContainers: 2` in recipe YAML in the `app` service section, or change the minimum containers in "Automatic Scaling configuration" section of service detail).
+
+<br/>
+
+## Loca
+
+## Changes made over the default installation
+
+If you want to modify your existing Qwik app to efficiently run on Zerops, follow these steps:
+
+1. Install the necessary adapter with:
+   `sh
+    npm run qwik add static
+    `
+   Running this command will make the following changes
+
+- A build.server script will be automatically added to your package.json file.
+- A adapters/static/vite.config.ts file will be created.
+
+Now, just add the [zerops.yml](https://github.com/zeropsio/recipe-qwik-static/blob/main/zerops.yml) file to the root of your project, and make sure to check `package.json` for the scripts.
+
+<br/>
+
+Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).

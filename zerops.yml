@@ -1,11 +1,13 @@
 zerops:
-  - setup: app
+  - setup: app2
     build:
       base: nodejs@20
       buildCommands:
         - pnpm i
-        - pnpm build.server
+        - pnpm build
       deployFiles:
-        - dist/~
+        - public
+        - node_modules
+        - dist/analog/public/~
     run:
       base: static

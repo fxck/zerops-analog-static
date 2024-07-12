@@ -7,12 +7,8 @@ export default defineConfig(({ mode }) => ({
     analog({
       static: true,
       prerender: {
-        routes: async () => [
-          '/',
-        ],
+        routes: async () => ['/'],
       },
     }),
   ],
 }));
-
-

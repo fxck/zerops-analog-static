@@ -36,8 +36,8 @@ If you want to modify your existing Qwik app to efficiently run on Zerops, follo
 
 1. Install the necessary adapter with:
    `sh
-    npm run qwik add static
-    `
+npm run qwik add static
+`
    Running this command will make the following changes
 
 - A build.server script will be automatically added to your package.json file.

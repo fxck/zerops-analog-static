@@ -46,12 +46,12 @@
           }
         },
         "test": {
-          "builder": "@analogjs/platform:vitest"
+          "builder": "@analogjs/vitest-angular:test"
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "0025df83-878e-4379-b60e-5accf0f14e53"
   }
 }

@@ -9,13 +9,14 @@ import { Component, OnInit, ViewChild, Input, ElementRef } from '@angular/core';
 export class CodeBlockComponent implements OnInit {  
   showFeedback = false;
 
-  @Input() code: string;
+  @Input() code: string = ''; // Initialize with an empty string or a default value
 
-  @ViewChild('codeBlock', { static: true }) codeBlock: ElementRef;
+  @ViewChild('codeBlock', { static: true }) codeBlock!: ElementRef; // Use non-null assertion
 
   ngOnInit() {
     setTimeout(() => {
-      hljs.highlightBlock(this.codeBlock.nativeElement);
+      // Assuming you don't need hljs, you can use this code block for other logic
+      console.log(this.codeBlock.nativeElement); // Example logic
     });
   }
 
@@ -42,8 +43,8 @@ services:
     type: static
     enableSubdomainAccess: true
     buildFromGit: https://github.com/zeropsio/recipe-analog-static
-    `
-        this.importyaml = importproject;
+    `;
+    this.importyaml = importproject;
 
     const zerops = `
 zerops:
@@ -59,8 +60,8 @@ zerops:
         - dist/analog/public/~
     run:
       base: static
-`
+    `;
     
-        this.zeropsyaml = zerops;
+    this.zeropsyaml = zerops;
   }
 }

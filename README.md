@@ -28,22 +28,9 @@ This recipe is ready for production as is, and will scale horizontally by adding
 
 <br/>
 
-## Loca
-
 ## Changes made over the default installation
 
-If you want to modify your existing Qwik app to efficiently run on Zerops, follow these steps:
-
-1. Install the necessary adapter with:
-   `sh
-npm run qwik add static
-`
-   Running this command will make the following changes
-
-- A build.server script will be automatically added to your package.json file.
-- A adapters/static/vite.config.ts file will be created.
-
-Now, just add the [zerops.yml](https://github.com/zeropsio/recipe-qwik-static/blob/main/zerops.yml) file to the root of your project, and make sure to check `package.json` for the scripts.
+If you want to modify your existing Solid app to efficiently run on Zerops, there are no changes needed in the codebase on top of the standard installation, just add [zerops.yml](https://github.com/zeropsio/recipe-analog-static/blob/main/zerops.yml) to your repository.
 
 <br/>
 
